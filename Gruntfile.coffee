@@ -3,12 +3,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-concat'
 
-  banner = 
-
-  fileName = "dist/<%= configuration.name %>-<% configuration.version %>.js"
+  configuration = grunt.file.readJSON 'package.json'
+  fileName = "dist/<%= configuration.name %>-#{ configuration.version #}.js"
 
   grunt.initConfig
-    configuration: grunt.file.readJSON 'package.json'
+    configuration: configuration
 
     karma:
       unit:
@@ -28,7 +27,7 @@ module.exports = (grunt) ->
     concat:
       options:
         banner: """/*
-                <%= configuration.name %> <% configuration.version %>
+                <%= configuration.name %> #{ configuration.version #}
                 License: <%= configuration.license %>
                 */\n\n"""
 
