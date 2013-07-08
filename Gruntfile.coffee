@@ -19,10 +19,7 @@ module.exports = (grunt) ->
       target:
         dest: "#{fileName}"
 
-        src: [
-          'src/*.coffee'
-          'src/**/*.coffee'
-        ]
+        src: 'src/**/*.coffee'
 
     concat:
       options:
