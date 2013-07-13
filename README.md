@@ -42,7 +42,5 @@ Why not use Marionette's modules?
 ---------------------------------
 
 They solve a different problem. You could use modules along with this if you
-wanted sub-appliancemanagers. However, the authors of this library do not
-recommend using Marionette's modules, because the problem which they solve
-is solved poorly and therefore represents an anti-pattern in Marionette itself.
+wanted sub-appliancemanagers.
 
