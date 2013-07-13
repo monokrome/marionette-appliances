@@ -1,14 +1,14 @@
 {
-  "name": "Your package name",
-  "version": "Your package version",
-  "description": "Your package's description",
+  "name": "marionette-appliances",
+  "version": "0.1.0",
+  "description": "Adds the concept of small modular appliances to MarionetteJS.",
 
   "author": "Brandon R. Stoner",
   "license": "MIT",
 
   "repository": {
     "type": "git",
-    "url": "Your repository URL"
+    "url": "https://github.com/monokrome/marionette-appliances"
   },
 
   "devDependencies": {
