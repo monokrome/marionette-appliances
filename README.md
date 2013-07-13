@@ -16,7 +16,7 @@ JavaScript models, you should be able to simply do the following:
 
 After loading your application, it will attempt the following process:
 
-1) Call `require("example/controller")` and expect it to export an object
+- Call `require("example/controller")` and expect it to export an object
 called `Controller` which extends `Marionette.AppRouter`. If a controller is
 found, it will be instantiated and pass your `Application` instance as the
 `application' option to the controller. This allows `this.options.application`
@@ -24,15 +24,15 @@ to refer to the current application instance for every appliance controller.
 
 If the Controller does not exist, then the next step will be skipped.
 
-2) Since we have found a `Controller`, attempt to `require("example/router")`
+- Since we have found a `Controller`, attempt to `require("example/router")`
 and expect this to export an object called `Router` which extends
 `Marionette.AppRouter`. If the object exists, it will instantiate the provided
 `Router` passing the controller instance as the `controller` option.
 
-3) Restart this process with the next appliance until all appliances have been
+- Restart this process with the next appliance until all appliances have been
 created.
 
-4) Assign all routers to application.routers[applianceName], so that appliances
+- Assign all routers to application.routers[applianceName], so that appliances
 can communicate with eachother via events or function calls if necessary.
 
 This seems very simple, but the structure implied by it provides a set of
