@@ -38,4 +38,4 @@ class ApplianceManager extends Backbone.Marionette.Application
     @trigger 'appliances:initialized'
 
 
-Marionette.ApplianceLoader = ApplianceManager
+Marionette.ApplianceManager = ApplianceManager
