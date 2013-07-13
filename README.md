@@ -42,5 +42,5 @@ Why not use Marionette's modules?
 ---------------------------------
 
 They solve a different problem. You could use modules along with this if you
-wanted sub-appliancemanagers.
+wanted to nest ApplianceManagers.
 
