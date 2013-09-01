@@ -16,24 +16,25 @@ JavaScript models, you should be able to simply do the following:
 
 After loading your application, it will attempt the following process:
 
-- Call `require("example/controller")` and expect it to export an object
-called `Controller` which extends `Marionette.AppRouter`. If a controller is
-found, it will be instantiated and pass your `Application` instance as the
-`application` option to the controller. This allows `this.options.application`
-to refer to the current application instance for every appliance controller.
+- Call `require("example/controller")` and expect it to export an object called
+  `Controller` which extends `Marionette.AppRouter`. If a controller is found,
+  it will be instantiated and pass your `Application` instance as the
+  `application` option to the controller. This allows
+  `this.options.application` to refer to the current application instance for
+  every appliance controller.
 
-If the Controller does not exist, then the next step will be skipped.
+  If the Controller does not exist, then the next step will be skipped.
 
 - Since we have found a `Controller`, attempt to `require("example/router")`
-and expect this to export an object called `Router` which extends
-`Marionette.AppRouter`. If the object exists, it will instantiate the provided
-`Router` passing the controller instance as the `controller` option.
+  and expect this to export an object called `Router` which extends
+  `Marionette.AppRouter`. If the object exists, it will instantiate the
+  provided `Router` passing the controller instance as the `controller` option.
 
 - Restart this process with the next appliance until all appliances have been
-created.
+  created.
 
 - Assign all routers to application.routers[applianceName], so that appliances
-can communicate with eachother via events or function calls if necessary.
+  can communicate with eachother via events or function calls if necessary.
 
 This seems very simple, but the structure implied by it provides a set of
 conventions which make working with large apps very simple.
