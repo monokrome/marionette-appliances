@@ -19,6 +19,8 @@ class ApplianceManager extends Backbone.Marionette.Application
     @appliances = {}
 
     for appliance in appliances
+      @appliances[appliance] = {}
+
       {Controller} = @require "#{appliance}/controller"
 
       unless Controller?
