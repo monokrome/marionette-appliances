@@ -19,7 +19,7 @@ After loading your application, it will attempt the following process:
 - Call `require("example/controller")` and expect it to export an object
 called `Controller` which extends `Marionette.AppRouter`. If a controller is
 found, it will be instantiated and pass your `Application` instance as the
-`application' option to the controller. This allows `this.options.application`
+`application` option to the controller. This allows `this.options.application`
 to refer to the current application instance for every appliance controller.
 
 If the Controller does not exist, then the next step will be skipped.
