@@ -29,7 +29,7 @@ class ApplianceManager extends Backbone.Marionette.Application
       controller = new Controller
         application: @
 
-      @appliances[appliance].controller = new Router
+      @appliances[appliance].controller = controller
 
       {Router} = @require "#{appliance}/router"
 
