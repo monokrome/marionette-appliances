@@ -21,7 +21,7 @@ class ApplianceManager extends Backbone.Marionette.Application
     for appliance in appliances
       {Controller} = @require "#{appliance}/controller"
 
-      if not Controller
+      unless Controller?
         continue
 
       controller = new Controller
@@ -31,7 +31,7 @@ class ApplianceManager extends Backbone.Marionette.Application
 
       {Router} = @require "#{appliance}/router"
 
-      if not Router
+      unless Router?
         continue
 
       @appliances[appliance].router = new Router
