@@ -15,9 +15,10 @@ class ApplianceManager extends Backbone.Marionette.Application
   initializeAppliances: ->
     @trigger 'appliances:initialized:before'
 
-    routers = {}
+    appliances = @appliances
+    @appliances = {}
 
-    for appliance in @appliances
+    for appliance in appliances
       {Controller} = @require "#{appliance}/controller"
 
       if not Controller
@@ -26,15 +27,16 @@ class ApplianceManager extends Backbone.Marionette.Application
       controller = new Controller
         application: @
 
+      @appliances[appliance].controller = new Router
+
       {Router} = @require "#{appliance}/router"
 
       if not Router
         continue
 
-      router = routers[appliance] = new Router
+      @appliances[appliance].router = new Router
         controller: controller
 
-    @appliances.routers = routers
     @trigger 'appliances:initialized'
 
 
