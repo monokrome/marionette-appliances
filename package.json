@@ -1,6 +1,6 @@
 {
   "name": "marionette-appliances",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Adds the concept of small modular appliances to MarionetteJS.",
 
   "author": "Brandon R. Stoner",
