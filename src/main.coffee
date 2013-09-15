@@ -4,9 +4,9 @@ class ApplianceManager extends Backbone.Marionette.Application
 
     @on 'initialize:before', @initializeAppliances
 
-  require: (module) ->
+  require: (appliance, module) ->
     try
-      result = require module
+      result = require appliance + '/' + module
       return result
 
     catch err
@@ -21,7 +21,7 @@ class ApplianceManager extends Backbone.Marionette.Application
     for appliance in appliances
       @appliances[appliance] = {}
 
-      {Controller} = @require "#{appliance}/controller"
+      {Controller} = @require appliance, 'controller'
 
       unless Controller?
         continue
@@ -31,7 +31,7 @@ class ApplianceManager extends Backbone.Marionette.Application
 
       @appliances[appliance].controller = controller
 
-      {Router} = @require "#{appliance}/router"
+      {Router} = @require appliance, 'router'
 
       unless Router?
         continue
