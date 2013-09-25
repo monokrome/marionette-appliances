@@ -9,10 +9,10 @@ Usage
 In a simple case where you have a function called require() that can require
 JavaScript models, you should be able to simply do the following:
 
-  class ExampleApplication extends Marionette.ApplianceManager
-    appliances: [
-      'example'
-    ]
+    class ExampleApplication extends Marionette.ApplianceManager
+        appliances: [
+            'example'
+        ]
 
 After loading your application, it will attempt the following process:
 
