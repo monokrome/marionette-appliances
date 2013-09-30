@@ -15,7 +15,6 @@ module.exports = (grunt) ->
         browsers: ['PhantomJS']
 
     coffee:
-
       target:
         dest: "#{fileName}"
 
