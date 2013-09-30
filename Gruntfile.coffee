@@ -17,7 +17,6 @@ module.exports = (grunt) ->
     coffee:
       target:
         dest: "#{fileName}"
-
         src: 'src/**/*.coffee'
 
     concat:
