@@ -12,23 +12,21 @@ class ApplianceManager extends Backbone.Marionette.Application
     catch err
       return false
 
-  getAppliance: (appliance) ->
+  loadAppliance: (appliance) ->
     @appliances[appliance] = @module appliance
 
-    {Controller} = @require appliance, 'controller'
+    {Controller} = @getComponent appliance, 'controller'
 
-    unless Controller?
-      continue
+    return unless Controller?
 
     controller = new Controller
       application: @
 
     @appliances[appliance].controller = controller
 
-    {Router} = @require appliance, 'router'
+    {Router} = @getComponent appliance, 'router'
 
-    unless Router?
-      continue
+    return unless Router?
 
     @appliances[appliance].router = new Router
       controller: controller
@@ -36,9 +34,7 @@ class ApplianceManager extends Backbone.Marionette.Application
   initializeAppliances: ->
     @trigger 'appliances:initialized:before'
 
-    @appliances = {}
-
-    for appliance in appliances
+    for appliance in @appliances
       @loadAppliance appliance
 
     @trigger 'appliances:initialized'
