@@ -1,6 +1,8 @@
 marionette-appliances
 =====================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/monokrome/marionette-appliances.svg)](https://greenkeeper.io/)
+
 Adds the concept of small modular appliances to MarionetteJS.
 
 Usage
